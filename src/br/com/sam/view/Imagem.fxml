@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.sam.control.ImagemController">
+   <children>
+      <ImageView fx:id="imgfoto" fitHeight="600.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../img/irineu.jpg" />
+         </image></ImageView>
+      <Label fx:id="lblsuperior" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="23.0" prefHeight="254.0" prefWidth="555.0" text="texto superior" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Impact" size="62.0" />
+         </font></Label>
+      <Label fx:id="lblinferior" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="338.0" prefHeight="254.0" prefWidth="555.0" text="texto inferior" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Impact" size="62.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="179.0" fitWidth="212.0" layoutX="29.0" layoutY="376.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../img/logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
