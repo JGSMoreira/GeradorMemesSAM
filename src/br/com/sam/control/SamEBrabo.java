@@ -25,7 +25,7 @@ public class SamEBrabo extends Application {
             Scene scene = new Scene(root);
             Stage stage1 = new Stage();
             stage1.setScene(scene);
-            stage1.setTitle("MEME MAKER DA SAM");
+            stage1.setTitle("SAM Mememaker");
             stage1.show();
             stage1.setResizable(false);
         }

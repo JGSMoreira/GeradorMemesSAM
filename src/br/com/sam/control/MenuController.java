@@ -56,10 +56,10 @@ public class MenuController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/br/com/sam/view/Imagem.fxml"));
             loader.setControllerFactory(c -> {return new ImagemController(txtsuperior.getText(), txtinferior.getText(), tipo);});
             Parent root = loader.load();
-            Scene scene = new Scene(root, 590, 590);
+            Scene scene = new Scene(root, 590, 633);
             Stage stage = new Stage();
             stage.setScene(scene);
-            stage.setTitle("Visualizar Meme");
+            stage.setTitle("SAM Mememaker - Visualizar Meme");
             stage.show();
             stage.setResizable(false);
         }
