@@ -1,5 +1,5 @@
 # Gerador de Memes da SAM (South America Memes)
-
+PELO AMOR DE DEUS ISSO FOI UMA PIADA
 ### Sobre
 tomei ban por causa disso ai,,, 
 
