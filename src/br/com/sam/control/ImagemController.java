@@ -5,6 +5,7 @@
  */
 package br.com.sam.control;
 
+import br.com.sam.seila.TipoMeme;
 import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
@@ -12,17 +13,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import javafx.stage.Window;
 import javax.imageio.ImageIO;
 
@@ -33,9 +30,9 @@ import javax.imageio.ImageIO;
  */
 public class ImagemController implements Initializable {
 
-    private String tipo;
-    private String textosup;
-    private String textoinf;
+    private final TipoMeme tipo;
+    private final String textosup;
+    private final String textoinf;
     private Window janela;
     @FXML
     private Label lblsuperior;
@@ -46,35 +43,10 @@ public class ImagemController implements Initializable {
     @FXML
     private Pane painelmeme;
 
-    /**
-     * Initializes the controller class.
-     */
-    
     public void receberDados(){
         lblsuperior.setText(textosup);
         lblinferior.setText(textoinf);
-        verificaTipo();
-    }
-    
-    public void verificaTipo(){
-        if (tipo == "irineu"){
-            imgfoto.setImage(new Image("/img/irineu.jpg"));
-        }
-        if (tipo == "capeto"){
-            imgfoto.setImage(new Image("/img/capeto.png"));
-        }
-        if (tipo == "reflexao"){
-            imgfoto.setImage(new Image("/img/reflexo.png"));
-        }
-        if (tipo == "vd1"){
-            imgfoto.setImage(new Image("/img/vd1.png"));
-        }
-        if (tipo == "vd2"){
-            imgfoto.setImage(new Image("/img/vd2.png"));
-        }
-        if (tipo == "vd3"){
-            imgfoto.setImage(new Image("/img/vd3.png"));
-        }
+        imgfoto.setImage(new Image(tipo.getDiretorio()));
     }
     
     @FXML
@@ -95,12 +67,13 @@ public class ImagemController implements Initializable {
     public void exportarMeme(){
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Imagens PNG (*.PNG)", "*.png"));
+        fileChooser.setInitialFileName(textosup + " " + textoinf);
 
         File file = fileChooser.showSaveDialog(null);
 
         if(file != null){
             try {
-                WritableImage writableImage = new WritableImage((int)painelmeme.getWidth(), (int)painelmeme.getHeight());
+                WritableImage writableImage = new WritableImage((int) painelmeme.getWidth(), (int) painelmeme.getHeight());
                 painelmeme.snapshot(null, writableImage);
                 RenderedImage renderedImage = SwingFXUtils.fromFXImage(writableImage, null);
                 ImageIO.write(renderedImage, "png", file);
@@ -110,7 +83,7 @@ public class ImagemController implements Initializable {
         }
     }
     
-    public ImagemController(String superior, String inferior, String tipo){
+    public ImagemController(String superior, String inferior, TipoMeme tipo){
         this.textosup = superior;
         this.textoinf = inferior;
         this.tipo = tipo;
