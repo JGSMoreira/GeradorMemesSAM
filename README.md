@@ -6,5 +6,4 @@ PELO AMOR DE DEUS ISSO FOI UMA PIADA
 tomei ban por causa disso ai,,, 
 
 ### Download
-É só baixar o arquivo 'SamEBrabo.jar" e executar.
-###### Ou você pode clicar [aqui!](https://github.com/MineSlim/GeradorMemesSAM/raw/master/SamEBrabo.jar)
+É só baixar o arquivo 'SamEBrabo.jar" na página [Releases](https://github.com/JGSMoreira/GeradorMemesSAM/releases) e executar.
